@@ -1,5 +1,12 @@
 package action;
 
-public interface Action {
+import character.Player;
 
+public interface Action {
+	
+	public String toString();
+	
+	public void execute(Player p);
+	
+	public void isPossible();
 }
