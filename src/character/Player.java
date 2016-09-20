@@ -15,7 +15,8 @@ public class Player extends GameCharacter {
 	}
 	
 	public void act() {
-		
+		Action a = this.chooseAction();
+		a.execute(this);
 	}
 	
 	public void addAction(Action a) {
