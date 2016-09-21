@@ -2,11 +2,14 @@ package action;
 
 import character.Player;
 
-public interface Action {
+public abstract class Action {
 	
-	public String toString();
 	
-	public void execute(Player p);
+	public String toString() {
+		return "slt";
+	}
 	
-	public void isPossible();
+	public abstract void execute(Player p);
+	
+	public abstract void isPossible();
 }

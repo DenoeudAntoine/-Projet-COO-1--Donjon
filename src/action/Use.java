@@ -2,7 +2,7 @@ package action;
 
 import character.Player;
 
-public class Use implements Action {
+public class Use extends Action {
 
 	public Use() {
 		// TODO Auto-generated constructor stub
