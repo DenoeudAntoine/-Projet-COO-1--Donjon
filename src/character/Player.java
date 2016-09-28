@@ -44,5 +44,5 @@ public class Player extends GameCharacter {
 		return liste.get(i-1);
 
 	
-	
+	}
 }
