@@ -9,7 +9,7 @@ public abstract class Action {
 		return "slt";
 	}
 	
-	public abstract void execute(Player p);
+	public abstract void execute();
 	
-	public abstract void isPossible();
+	public abstract boolean isPossible(Player p);
 }

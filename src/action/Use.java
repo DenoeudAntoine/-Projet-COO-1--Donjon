@@ -9,15 +9,15 @@ public class Use extends Action {
 	}
 
 	@Override
-	public void execute(Player p) {
+	public void execute() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void isPossible() {
+	public boolean isPossible(Player p) {
 		// TODO Auto-generated method stub
-		
+		return true;
 	}
 
 }

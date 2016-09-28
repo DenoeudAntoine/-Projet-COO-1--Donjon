@@ -10,6 +10,16 @@ public class Room {
 	protected List<Monster> lMonsters = new ArrayList<Monster>();
 	protected List<Item> lItems = new ArrayList<Item>();
 	protected Map<Direction,Room> neighboors = new HashMap<Direction,Room>();
+	
+	public List<Monster> getlMonsters() {
+		return lMonsters;
+	}
+
+	public List<Item> getlItems() {
+		return lItems;
+	}
+
+	
 	public Room() {
 		// TODO Auto-generated constructor stub
 	}
@@ -21,7 +31,7 @@ public class Room {
 	public void addNeighboors(Direction d, Room m) {
 		neighboors.put(d,m);
 	}
-	
+
 	/**
 	 * Verifie si la direction est libre
 	 * @param d

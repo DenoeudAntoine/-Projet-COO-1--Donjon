@@ -1,22 +1,29 @@
 package action;
 
+import character.Monster;
 import character.Player;
 
 public class Attack extends Action {
-
-	public Attack() {
+	
+	protected Monster monster;
+	protected Player player;
+	
+	public Attack(Monster monster,Player player) {
 		// TODO Auto-generated constructor stub
+		this.monster = monster;
+		this.player = player;
 	}
 
 	@Override
-	public void execute(Player p) {
+	public void execute() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void isPossible() {
+	public boolean isPossible(Player p) {
 		// TODO Auto-generated method stub
+		return true;
 		
 	}
 
