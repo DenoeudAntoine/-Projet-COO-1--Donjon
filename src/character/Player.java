@@ -42,7 +42,5 @@ public class Player extends GameCharacter {
 			 return null;
 		
 		return liste.get(i-1);
-
-	
 	}
 }

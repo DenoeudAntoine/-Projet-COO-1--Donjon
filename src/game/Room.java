@@ -21,5 +21,17 @@ public class Room {
 	public void addNeighboors(Direction d, Room m) {
 		neighboors.put(d,m);
 	}
-
+	
+	/**
+	 * Verifie si la direction est libre
+	 * @param d
+	 * @return true si la direction est libre / false sinon
+	 */
+	public List<Direction> verifDirection() {
+		List<Direction> lDirection = Direction.getAllDirection();
+				
+		for(Direction d : neighboors.keySet())
+			lDirection.remove(d);
+		return lDirection;
+	}
 }
