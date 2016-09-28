@@ -21,13 +21,14 @@ public class Player extends GameCharacter {
 	
 	public void act() {
 		Action action = this.chose(lActions);
-		action.execute(this);
+        action.execute(this);
 	}
 	
 	public void addAction(Action a) {
 		lActions.add(a);
 	}
 	
+
 	public <T> T chose(List <T> liste) {
 		int i = 0;
 		System.out.println("Veuillez choisir une action\n0 : return null");
@@ -41,8 +42,7 @@ public class Player extends GameCharacter {
 			 return null;
 		
 		return liste.get(i-1);
-		
-	}
+
 	
 	
 }
