@@ -10,8 +10,10 @@ public class Room {
 	protected List<Monster> lMonsters = new ArrayList<Monster>();
 	protected List<Item> lItems = new ArrayList<Item>();
 	protected Map<Direction,Room> neighboors = new HashMap<Direction,Room>();
-	public Room() {
-		// TODO Auto-generated constructor stub
+	private String description;
+	
+	public Room(String description) {
+		this.description = description;
 	}
 	
 	public Room getNeighboors(Direction d) {
@@ -21,5 +23,8 @@ public class Room {
 	public void addNeighboors(Direction d, Room m) {
 		neighboors.put(d,m);
 	}
-
+	
+	public String getDescription() {
+		return this.description;
+	}
 }
