@@ -28,31 +28,32 @@ public class Main {
 				//Création de la salle suivante
 				Room nextRoom = new Room("Salle " + (indice+1));
 								
-				//Ajout voisin Est
+				
 				if(i != taille - 1) {
+					//Ajout voisin Est
 					tmpRoom.addNeighboors(Direction.Est, nextRoom);
+					
+					//Ajout voisin Ouest
+					nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
 				}
 				
-				//Ajout voisin Ouest
-				if(i != taille - 1)
-					nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
-				
-				//Ajout voisin nord grâce à la liste
-				if(j != 0)
+				if(j != 0) {
+					//Ajout voisin nord grâce à la liste
 					tmpRoom.addNeighboors(Direction.Nord, tmpList.get(i));
-				
-				//Récupération de la salle dans la liste pour ajouter la salle en cours en voisin
-				if(j != 0)
+					
+					//Ajout voisin sud pour la salle du dessus
 					tmpList.get(i).addNeighboors(Direction.Sud, tmpRoom);
-				
-				//Ajout de la salle en cours dans la liste, au bon indice
-				if(j == 0)
-					tmpList.add(tmpRoom);
-				else						
+					
+					//Ajout de la salle dans la liste au bon indice
 					tmpList.set(i, tmpRoom);
-				
+				}
+				else {
+					//Ajout de la salle dans la liste
+					tmpList.add(tmpRoom);
+				}
+			
 				//Test
-				if(j == 3 && i == 3)
+				if(j == 0 && i == 4)
 					salleTest = tmpRoom;
 					
 				tmpRoom = nextRoom;
