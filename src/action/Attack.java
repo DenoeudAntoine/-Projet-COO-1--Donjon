@@ -1,7 +1,6 @@
 package action;
 
 import character.GameCharacter;
-import character.Monster;
 import character.Player;
 import game.Room;
 
@@ -21,7 +20,7 @@ public class Attack extends Action {
 	public void execute() {
 		// TODO Auto-generated method stub
 		System.out.println("Le personnage " + attacker + " attaque " + target );
-		System.out.println(target + " perd " + attacker.getStrength() +" points de vie");
+		System.out.println(target + " perd " + attacker.getStrength() +" points de vie ");
 	}
 
 	@Override
