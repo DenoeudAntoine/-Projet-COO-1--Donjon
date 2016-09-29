@@ -2,13 +2,15 @@ package action;
 
 import character.Monster;
 import character.Player;
+import game.Room;
 
 public class Attack extends Action {
 	
 	protected Monster monster;
 	protected Player player;
 	
-	public Attack(Monster monster,Player player) {
+	public Attack(Room currentRoom,Monster monster,Player player) {
+		super(currentRoom);
 		// TODO Auto-generated constructor stub
 		this.monster = monster;
 		this.player = player;

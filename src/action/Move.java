@@ -1,11 +1,14 @@
 package action;
 
 import character.Player;
+import game.Direction;
+import game.Room;
 
 public class Move extends Action {
 
-	public Move() {
+	public Move(Room currentRoom,Direction d) {
 		// TODO Auto-generated constructor stub
+		super(currentRoom);
 	}
 
 	@Override

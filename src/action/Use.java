@@ -1,11 +1,13 @@
 package action;
 
 import character.Player;
+import game.Room;
 
 public class Use extends Action {
 
-	public Use() {
+	public Use(Room currentRoom) {
 		// TODO Auto-generated constructor stub
+		super(currentRoom);
 	}
 
 	@Override
