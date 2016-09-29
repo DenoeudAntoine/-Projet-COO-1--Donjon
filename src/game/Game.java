@@ -24,6 +24,9 @@ public class Game {
 	}
 	
 	public void play(Player p) {
+		if(this.currentRoom.lMonsters.isEmpty() && this.currentRoom.lItems.isEmpty()) {
+			
+		}
 		
 	}
 	
@@ -39,9 +42,10 @@ public class Game {
 		return true;
 	}
 	
-	public boolean playerMoveTo(Direction d) {
-		return true;
+	public void playerMoveTo(Direction d) {
+		this.currentRoom = currentRoom.getNeighboors(d);
 	}
+	
 	
 
 }

@@ -16,6 +16,19 @@ public class Room {
 		this.description = description;
 	}
 	
+	public List<Monster> getlMonsters() {
+		return lMonsters;
+	}
+
+	public List<Item> getlItems() {
+		return lItems;
+	}
+
+	
+	public Room() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Room getNeighboors(Direction d) {
 		return neighboors.get(d);
 	}
@@ -26,5 +39,20 @@ public class Room {
 	
 	public String getDescription() {
 		return this.description;
+}
+
+
+	/**
+	 * Verifie si la direction est libre
+	 * @param d
+	 * @return true si la direction est libre / false sinon
+	 */
+	public List<Direction> verifDirection() {
+		List<Direction> lDirection = Direction.getAllDirection();
+				
+		for(Direction d : neighboors.keySet())
+			lDirection.remove(d);
+		return lDirection;
+
 	}
 }
