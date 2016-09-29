@@ -41,7 +41,7 @@ public class Player extends GameCharacter {
 		
 			if (i == 0)
 				return null;
-		while(i < 0 && i >= liste.size());
+		} while(i < 0 && i >= liste.size());
 		 
 		return liste.get(i-1);
 	
