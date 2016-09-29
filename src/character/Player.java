@@ -21,7 +21,7 @@ public class Player extends GameCharacter {
 	
 	public void act() {
 		Action action = this.chose(lActions);
-        action.execute(this);
+        action.execute();
 	}
 	
 	public void addAction(Action a) {
@@ -31,16 +31,18 @@ public class Player extends GameCharacter {
 
 	public <T> T chose(List <T> liste) {
 		int i = 0;
-		System.out.println("Veuillez choisir une action\n0 : return null");
+		do {
+			System.out.println("Veuillez choisir une action\n0 : return null");
 		
-		for(T o : liste)
-			System.out.println( ++i + " : " + o);
+			for(T o : liste)
+				System.out.println( ++i + " : " + o);
+			
+			i = ScannerInt.readInt(liste.size()+1);
 		
-		i = ScannerInt.readInt(liste.size()+1);
-		
-		if (i == 0)
-			 return null;
-		
+			if (i == 0)
+				return null;
+		while(i < 0 && i >= liste.size());
+		 
 		return liste.get(i-1);
 	
 	}
