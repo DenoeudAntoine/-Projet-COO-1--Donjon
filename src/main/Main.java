@@ -31,11 +31,13 @@ public class Main {
 				//Création de la salle suivante
 				Room nextRoom = new Room("Salle " + (indice+1));
 								
-				
-				tmpRoom.addNeighboors(Direction.Est, nextRoom);
+				if(i != taille - 1)
+					tmpRoom.addNeighboors(Direction.Est, nextRoom);
 				tmpList.add(tmpRoom);
 				
-				nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
+				if(i != taille - 1)
+					nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
+								
 				tmpRoom = nextRoom;
 				
 				//Ajout de la dernière colonne
@@ -66,10 +68,11 @@ public class Main {
 				tmpList.set(i, tmpRoom);
 				
 				//Ajout voisin 
-				nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
+				if(i != taille - 1)
+					nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
 				
 				//test
-				if(j == 2 && i == 0)
+				if(j == 4 && i == 0)
 					salleTest = tmpRoom;
 					
 				tmpRoom = nextRoom;
@@ -85,7 +88,7 @@ public class Main {
 		}
 	}
 	System.out.println("Salle en cours : " + salleTest.getDescription());
-	System.out.println("Salle au Sud : " + salleTest.getNeighboors(Direction.Sud).getDescription());
+	//System.out.println("Salle au Sud : " + salleTest.getNeighboors(Direction.Sud).getDescription());
 	System.out.println("Salle au Nord : " + salleTest.getNeighboors(Direction.Nord).getDescription());
 	System.out.println("Salle a l'Est : " + salleTest.getNeighboors(Direction.Est).getDescription());
 	System.out.println("Salle a l'Ouest : " + salleTest.getNeighboors(Direction.Ouest).getDescription());
