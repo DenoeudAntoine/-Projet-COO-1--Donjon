@@ -10,4 +10,9 @@ public abstract class GameCharacter {
 		this.strength = strength;
 		this.coins = coins;
 	}
+
+	public int getStrength() {
+		// TODO Auto-generated method stub
+		return this.strength;
+	}
 }

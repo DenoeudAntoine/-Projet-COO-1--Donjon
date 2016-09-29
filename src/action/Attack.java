@@ -1,25 +1,27 @@
 package action;
 
+import character.GameCharacter;
 import character.Monster;
 import character.Player;
 import game.Room;
 
 public class Attack extends Action {
 	
-	protected Monster monster;
-	protected Player player;
+	protected GameCharacter attacker;
+	protected GameCharacter target;
 	
-	public Attack(Room currentRoom,Monster monster,Player player) {
+	public Attack(Room currentRoom,GameCharacter attacker,GameCharacter target) {
 		super(currentRoom);
 		// TODO Auto-generated constructor stub
-		this.monster = monster;
-		this.player = player;
+		this.attacker = attacker;
+		this.target = target;
 	}
 
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Le personnage " + attacker + " attaque " + target );
+		System.out.println(target + " perd " + attacker.getStrength() +" points de vie");
 	}
 
 	@Override
