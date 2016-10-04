@@ -19,6 +19,23 @@ public class Player extends GameCharacter {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public void heal(int hp) {
+		
+		this.hp += hp;
+	}
+	
+	public void addGolds(int coins){
+		this.coins = coins;
+	}
+	
+	public void addStregth(int strength) {
+		this.strength = strength;
+	}
+	
+	public int getCoins() {
+		return coins;
+	}
+	
 	public void act() {
 		Action action = this.chose(lActions);
         action.execute(this);
