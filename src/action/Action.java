@@ -11,11 +11,11 @@ public abstract class Action {
 		this.currentRoom = room;
 	}
 	
-	public String toString() {
+	public String toString() {	
 		return "slt";
 	}
 	
-	public abstract void execute();
+	public abstract void execute(Player p);
 	
-	public abstract boolean isPossible(Player p);
+	public abstract boolean isPossible();
 }

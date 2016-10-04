@@ -6,5 +6,11 @@ public class Monster extends GameCharacter {
 		super(hp, strength, coins);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Le monstre";
+	}
 	
 }

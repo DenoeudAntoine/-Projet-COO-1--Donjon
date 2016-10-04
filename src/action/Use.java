@@ -7,27 +7,27 @@ import item.Item;
 public class Use extends Action {
 	
 	protected Item item;
-	protected Player player;
 	
-	public Use(Room currentRoom, Item item, Player player) {
+	public Use(Room currentRoom, Item item) {
 		// TODO Auto-generated constructor stub
 		super(currentRoom);
 		this.item = item;
-		this.player = player;
 	}
 
 	@Override
-	public void execute() {
+	public void execute(Player p) {
 		// TODO Auto-generated method stub
 		System.out.println("L'objet " + item + "va vous affecter !");
-		item.effect(player);
+		item.effect(p);
 		
 	}
 
 	@Override
-	public boolean isPossible(Player p) {
+	public boolean isPossible() {
 		// TODO Auto-generated method stub
-		return true;
+		if (item.isPossible())
+			return true;
+		return false;
 	}
 
 }

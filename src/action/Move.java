@@ -18,19 +18,18 @@ public class Move extends Action {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(Player p) {
 		// TODO Auto-generated method stub
 		System.out.println("Tu vas être déplacé");
 		g.playerMoveTo(d);
 	}
 
 	@Override
-	public boolean isPossible(Player p) {
+	public boolean isPossible() {
 		// TODO Auto-generated method stub
-		if ( currentRoom.getNeighboors(d) != null) {
-			p.addAction(this);
+		if ( currentRoom.getNeighboors(d) != null) 
 			return true;
-		}
+		
 			
 		return false;
 	}

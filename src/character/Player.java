@@ -21,7 +21,7 @@ public class Player extends GameCharacter {
 	
 	public void act() {
 		Action action = this.chose(lActions);
-        action.execute();
+        action.execute(this);
 	}
 	
 	public void addAction(Action a) {
@@ -45,5 +45,11 @@ public class Player extends GameCharacter {
 		 
 		return liste.get(i-1);
 	
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Le joueur";
 	}
 }

@@ -16,7 +16,7 @@ public class Look extends Action {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(Player p) {
 		// TODO Auto-generated method stub
 		if(roomToLook.getlMonsters().isEmpty())
 			System.out.println("Aucun monstre dans cette salle");
@@ -32,12 +32,11 @@ public class Look extends Action {
 	}
 
 	@Override
-	public boolean isPossible(Player p) {
+	public boolean isPossible() {
 		// TODO Auto-generated method stub
-		if(roomToLook != null) {
-			p.addAction(this);
+		if(roomToLook != null) 
 			return true;
-		}
+		
 		return false;
 	}
 
