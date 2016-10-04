@@ -2,9 +2,7 @@ package game;
 
 public class ExitRoom extends Room {
 
-	public ExitRoom() {
-		// TODO Auto-generated constructor stub
+	public ExitRoom(String description) {
+		super(description);
 	}
-	
-	
 }
