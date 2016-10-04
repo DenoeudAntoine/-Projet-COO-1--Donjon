@@ -24,8 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 		Player player = new Player(20, 4, 0);
 		Game game = new Game(player);
-		
-		while(true) {
+        while(true) {
 			game.getCurrentRoom().addMonster(new Monster(1, 2, 3) );
 			game.getCurrentRoom().addMonster(new Monster(1, 2, 3));
 			game.getCurrentRoom().addMonster(new Monster(1, 2, 3));
