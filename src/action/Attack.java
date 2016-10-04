@@ -28,4 +28,10 @@ public class Attack extends Action {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Attaquer "  + target;
+	}
+
 }

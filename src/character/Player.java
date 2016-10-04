@@ -19,6 +19,14 @@ public class Player extends GameCharacter {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public List<Action> getActions() {
+		return lActions;
+	}
+	
+	public void removeAll() {
+		lActions = new ArrayList<Action>();
+	}
+	
 	public void heal(int hp) {
 		
 		this.hp += hp;

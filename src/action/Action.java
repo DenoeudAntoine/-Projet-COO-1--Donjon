@@ -11,9 +11,7 @@ public abstract class Action {
 		this.currentRoom = room;
 	}
 	
-	public String toString() {	
-		return "slt";
-	}
+	public abstract String toString();
 	
 	public abstract void execute(Player p);
 	

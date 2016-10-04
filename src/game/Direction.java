@@ -14,17 +14,19 @@ public enum Direction {
 		return lDirection;
 	}
 	
-	public static Direction getOpposite(Direction d) {
-		switch(d){
+	public String toString(Direction d) {
+		switch(d) {
 		case Nord:
-			return Sud;
-		case Sud :
-			return Nord;
+			return "au Nord.";
+		case Sud:
+			return "au Sud.";
 		case Est:
-			return Ouest;
+			return "à l'Est.";
 		case Ouest:
-			return Est;
+			return "à l'Ouest.";
+		default:
+			return "le gps est dans le brouillard.";
+				
 		}
-		return null;
 	}
 }

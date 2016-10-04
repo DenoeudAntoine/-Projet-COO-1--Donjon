@@ -34,4 +34,10 @@ public class Move extends Action {
 		return false;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Aller dans la salle " + d;
+	}
+
 }

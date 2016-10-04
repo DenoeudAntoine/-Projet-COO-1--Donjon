@@ -30,4 +30,10 @@ public class Use extends Action {
 		return false;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Utiliser " + item;
+	}
+
 }
