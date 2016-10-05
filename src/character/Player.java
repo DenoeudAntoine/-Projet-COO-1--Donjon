@@ -38,11 +38,11 @@ public class Player extends GameCharacter {
 	}
 	
 	public void addGolds(int coins){
-		this.coins = coins;
+		this.coins += coins;
 	}
 	
 	public void addStregth(int strength) {
-		this.strength = strength;
+		this.strength += strength;
 	}
 	
 	public void addItem(Item item){

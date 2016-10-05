@@ -40,6 +40,10 @@ public class Room {
 		return lItems.add(i);
 	}
 	
+	public boolean removeItem(Item i) {
+		return lItems.remove(i);
+	}
+	
 	
 	public Room getNeighboors(Direction d) {
 		return neighboors.get(d);

@@ -21,6 +21,8 @@ public class Use extends Action {
 		System.out.println("L'objet " + item + "va vous affecter !");
 		item.effect(p);
 		
+		game.getCurrentRoom().removeItem(item);
+		
 	}
 
 	@Override
