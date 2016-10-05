@@ -10,7 +10,7 @@ import scanner.ScannerInt;
 import action.Action;
 
 public class Player extends GameCharacter {
-	protected List<Item> lstItems = new ArrayList<Item>();
+	//protected List<Item> lstItems = new ArrayList<Item>();
 	
 	protected List<Action> lActions = new ArrayList<Action>();
 	
@@ -24,9 +24,9 @@ public class Player extends GameCharacter {
 		return lActions;
 	}
 	
-	public List<Item> getItems() {
+	/*public List<Item> getItems() {
 		return lstItems;
-	}
+	}*/
 	
 	public void removeAll() {
 		lActions = new ArrayList<Action>();
@@ -45,9 +45,9 @@ public class Player extends GameCharacter {
 		this.strength += strength;
 	}
 	
-	public void addItem(Item item){
+	/*public void addItem(Item item){
 		lstItems.add(item);
-	}
+	}*/
 	
 	public int getCoins() {
 		return coins;

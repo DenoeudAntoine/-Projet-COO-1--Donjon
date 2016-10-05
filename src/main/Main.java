@@ -2,22 +2,10 @@
 
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import action.Action;
-import action.Look;
-import action.Move;
-import character.Monster;
 import character.Player;
-import game.Direction;
-import game.ExitRoom;
+
 import game.Game;
-import game.Room;
-import item.Gold;
-import item.HealthPotion;
-import item.StrengthPotion;
+
 
 public class Main {
 	
