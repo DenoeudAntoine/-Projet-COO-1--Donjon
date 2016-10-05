@@ -19,8 +19,10 @@ public class Attack extends Action {
 		target.isAttacked(p);
 		p.isAttacked(target);
 		
-		if(target.getHP() <= 0)
+		if(target.getHP() <= 0){
+			System.out.println("Le monstre a été tué");
 			game.getCurrentRoom().removeMonster(target);
+		}
 	}
 
 	@Override

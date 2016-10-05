@@ -21,12 +21,14 @@ public enum Direction {
 		case Sud:
 			return "au Sud.";
 		case Est:
-			return "à l'Est.";
+			return "ï¿½ l'Est.";
 		case Ouest:
-			return "à l'Ouest.";
+			return "ï¿½ l'Ouest.";
 		default:
 			return "le gps est dans le brouillard.";
 				
 		}
 	}
+	
+ 
 }

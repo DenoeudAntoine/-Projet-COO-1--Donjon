@@ -11,7 +11,7 @@ public class Room {
 	protected List<Item> lItems = new ArrayList<Item>();
 	protected Map<Direction,Room> neighboors = new HashMap<Direction,Room>();
 	private String description;
-	
+		
 	public Room(String description) {
 		this.description = description;
 	}
@@ -57,6 +57,9 @@ public class Room {
 		return this.description;
 }
 
+	public boolean isExit() {
+		return false;
+	}
 
 	/**
 	 * Verifie si la direction est libre

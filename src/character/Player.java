@@ -71,7 +71,7 @@ public class Player extends GameCharacter {
 	public <T> T chose(List <T> liste) {
 		int i = 0;
 		do {
-			System.out.println("Veuillez choisir une action\n0 : return null");
+			System.out.println("Veuillez choisir une action\n");
 		
 			for(T o : liste)
 				System.out.println( ++i + " : " + o);
