@@ -1,11 +1,12 @@
 package game;
 
-import item.Item;
+import item.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import action.*;
 import character.Monster;
 import character.Player;
 
@@ -34,16 +35,46 @@ public class Game {
 	}
 	
 	public void play(Player p) {
+		Attack attack = new Attack(this);
+		if(attack.isPossible())
+			p.addAction(attack);
 		
+		Look look = new Look(this);
+		if(look.isPossible())
+			p.addAction(look);
+		
+		Move move = new Move(this);
+		if(move.isPossible())
+			p.addAction(move);
+		
+		Use use = new Use(this);
+		if(use.isPossible())
+			p.addAction(use);
+		
+		p.act();
 		
 	}
 	
 	public boolean isFinished() {
+		if(player.getHP() > 0)
+			return false;
 		return true;
 	}
 	
 	public void playerMoveTo(Direction d) {
 		this.currentRoom = currentRoom.getNeighboors(d);
+	}
+	
+	public void addItems(Room room) {
+		room.addItem(new Gold());
+		room.addItem(new HealthPotion());
+		room.addItem(new StrengthPotion());
+	}
+	
+	public void addMonsters(Room room) {
+		room.addMonster(new Monster(1, 2, 3) );
+		room.addMonster(new Monster(1, 2, 3));
+		room.addMonster(new Monster(1, 2, 3));
 	}
 	
 	public void createMap() {
@@ -61,7 +92,8 @@ public class Game {
 		tmpRoom = new Room("Salle 1");
 		this.currentRoom = tmpRoom;
 		
-		
+		this.addItems(tmpRoom);
+		this.addMonsters(tmpRoom);
 		
 		for(int j = 0 ; j < taille ; j++) {
 			
@@ -75,6 +107,8 @@ public class Game {
 					
 					tmpList = tmpRoom.addAllNeighboors(nextRoom, i, j, tmpList, taille);
 					tmpRoom = nextRoom;
+					this.addItems(tmpRoom);
+					this.addMonsters(tmpRoom);
 				}
 				else {
 					//Gestion cas aucune sortie générée
@@ -83,11 +117,15 @@ public class Game {
 						ExitRoom nextRoom = new ExitRoom("Salle " + (indice+1));
 						tmpList = tmpRoom.addAllNeighboors(nextRoom, i, j, tmpList, taille);
 						tmpRoom = nextRoom;
+						this.addItems(tmpRoom);
+						this.addMonsters(tmpRoom);
 					}
 					else {
 						Room nextRoom = new Room("Salle " + (indice+1));		
 						tmpList = tmpRoom.addAllNeighboors(nextRoom, i, j, tmpList, taille);
 						tmpRoom = nextRoom;
+						this.addItems(tmpRoom);
+						this.addMonsters(tmpRoom);
 					}					
 				}
 				indice ++;

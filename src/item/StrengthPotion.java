@@ -16,12 +16,13 @@ public class StrengthPotion implements Item {
 
 	public void effect(Player p) {
 		// TODO Auto-generated method stub
-		System.out.println(strength + " points de force sont ajoutés");
+		System.out.println(strength + " points de force sont ajoutï¿½s");
+		p.addStregth(strength);
+	}
+	
+	public String toString() {
+		return "Potion ajoutant " + strength + " points de force";
 	}
 
-	public boolean isPossible() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 
 }

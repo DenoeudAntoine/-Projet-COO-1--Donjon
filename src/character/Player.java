@@ -14,7 +14,6 @@ public class Player extends GameCharacter {
 	
 	protected List<Action> lActions = new ArrayList<Action>();
 	
-	protected List<String> possibleActions = new ArrayList<String>();
 	
 	public Player(int hp, int strength, int coins) {
 		super(hp, strength, coins);
@@ -23,6 +22,10 @@ public class Player extends GameCharacter {
 	
 	public List<Action> getActions() {
 		return lActions;
+	}
+	
+	public List<Item> getItems() {
+		return lstItems;
 	}
 	
 	public void removeAll() {
@@ -42,9 +45,15 @@ public class Player extends GameCharacter {
 		this.strength = strength;
 	}
 	
+	public void addItem(Item item){
+		lstItems.add(item);
+	}
+	
 	public int getCoins() {
 		return coins;
 	}
+	
+	
 	
 	public void act() {
 		Action action = this.chose(lActions);
@@ -80,6 +89,6 @@ public class Player extends GameCharacter {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Le joueur";
+		return "Player 1 : " + hp + " HP / " + strength + "points de force / " + coins + " pieces d'or" ;
 	}
 }

@@ -16,7 +16,7 @@ public class OneHarmedBandit implements Item {
 			Random r = new Random();
 			switch(r.nextInt(3)){
 			case 0:
-				System.out.println("Le bandit produit une bourse de pièces d'or");
+				System.out.println("Le bandit produit une bourse de piï¿½ces d'or");
 				new Gold().effect(p);
 				break;
 			case 1:
@@ -34,10 +34,9 @@ public class OneHarmedBandit implements Item {
 		
 		
 	}
-
-	public boolean isPossible() {
-		// TODO Auto-generated method stub
-		return true;
+	
+	public String toString() {
+		return "Bandit manchot";
 	}
 
 }

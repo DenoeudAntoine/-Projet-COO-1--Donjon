@@ -8,5 +8,4 @@ public interface Item {
 	
 	public void effect(Player p);
 	
-	public boolean isPossible();
 }

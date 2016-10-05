@@ -32,6 +32,10 @@ public class Room {
 		return lMonsters.add(m);
 	}
 	
+	public boolean removeMonster(Monster m) {
+		return lMonsters.remove(m);
+	}
+	
 	public boolean addItem(Item i) {
 		return lItems.add(i);
 	}

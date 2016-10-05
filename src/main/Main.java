@@ -24,22 +24,11 @@ public class Main {
 	public static void main(String[] args) {
 		Player player = new Player(20, 4, 0);
 		Game game = new Game(player);
-        while(true) {
-			game.getCurrentRoom().addMonster(new Monster(1, 2, 3) );
-			game.getCurrentRoom().addMonster(new Monster(1, 2, 3));
-			game.getCurrentRoom().addMonster(new Monster(1, 2, 3));
+        while(!game.isFinished()) {
 			
-			game.getCurrentRoom().addItem(new Gold());
-			game.getCurrentRoom().addItem(new HealthPotion());
-			game.getCurrentRoom().addItem(new StrengthPotion());
-			
-			player.addAction(new Look(game.getCurrentRoom()));
-			for(Direction d : game.getCurrentRoom().verifDirection()) 
-				player.addAction(new Move(game, game.getCurrentRoom(),d));
-			Action a = player.chose(player.getActions());
-			
-			a.execute(player);
-			
+        	System.out.println("\n\n"+ player );
+						
+			game.play(player);
 			player.removeAll();
 			
 		}

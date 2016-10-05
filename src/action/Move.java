@@ -17,18 +17,16 @@ public class Move extends Action {
 	@Override
 	public void execute(Player p) {
 		// TODO Auto-generated method stub
+		Direction d = p.chose(game.getCurrentRoom().verifDirection());
 		System.out.println("Tu vas �tre d�plac�");
-		g.playerMoveTo(d);
+		game.playerMoveTo(d);
 	}
 
 	@Override
 	public boolean isPossible() {
 		// TODO Auto-generated method stub
-		for(Direction d : Direction.getAllDirection()) {
-			if(game.getCurrentRoom().getNeighboors(d) != null)
-				return true;
-		}
-		
+		if(game.getCurrentRoom().getlMonsters().isEmpty())
+			return true;
 			
 		return false;
 	}
@@ -36,7 +34,7 @@ public class Move extends Action {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Aller dans la salle " + d;
+		return "Action move";
 	}
 
 }

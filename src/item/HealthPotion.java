@@ -16,13 +16,12 @@ public class HealthPotion implements Item {
 
 	public void effect(Player p) {
 		// TODO Auto-generated method stub
-		System.out.println(heal + " hp vont être ajouté !");
+		System.out.println(heal + " hp vont ï¿½tre ajoutï¿½ !");
 		p.heal(heal);
 	}
-
-	public boolean isPossible() {
-		// TODO Auto-generated method stub
-		return true;
+	
+	public String toString() {
+		return "Potion de " + heal + " points de vie";
 	}
 
 }

@@ -10,7 +10,7 @@ public class Monster extends GameCharacter {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Le monstre";
+		return "Mosntre : " + hp + " hp / " + strength + " force / " + coins + " coins";
 	}
 	
 }

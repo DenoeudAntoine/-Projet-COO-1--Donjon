@@ -16,7 +16,7 @@ public class Use extends Action {
 	public void execute(Player p) {
 		
 		// choisir un item parmi les itesm de la piece
-		
+		Item item = p.chose(game.getCurrentRoom().getlItems());
 		// TODO Auto-generated method stub
 		System.out.println("L'objet " + item + "va vous affecter !");
 		item.effect(p);
@@ -27,15 +27,15 @@ public class Use extends Action {
 	public boolean isPossible() {
 		// ? this.game.getCurrentRoom().litems est vide ?
 		// TODO Auto-generated method stub
-		if (item.isPossible())
-			return true;
-		return false;
+		if (game.getCurrentRoom().getlItems().isEmpty())
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Utiliser " + item;
+		return "Action use";
 	}
 
 }

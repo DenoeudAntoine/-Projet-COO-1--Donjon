@@ -16,6 +16,10 @@ public abstract class GameCharacter {
 		return this.strength;
 	}
 	
+	public int getHP() {
+		return hp;
+	}
+	
 	public void isAttacked(GameCharacter c) {
 		System.out.println(this + " perd " + c.getStrength());
 		this.hp -= c.getStrength();
