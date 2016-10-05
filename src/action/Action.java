@@ -1,14 +1,15 @@
 package action;
 
 import character.Player;
+import game.Game;
 import game.Room;
 
 public abstract class Action {
 	
-	protected Room currentRoom;
+	protected Game game;
 	
-	public Action(Room room){
-		this.currentRoom = room;
+	public Action(Game game){
+		this.game = game;;
 	}
 	
 	public abstract String toString();

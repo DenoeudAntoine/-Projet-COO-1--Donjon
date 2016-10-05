@@ -2,14 +2,15 @@ package action;
 
 import character.GameCharacter;
 import character.Player;
+import game.Game;
 import game.Room;
 
 public class Attack extends Action {
 	
 	protected GameCharacter target;
 	
-	public Attack(Room currentRoom,GameCharacter target) {
-		super(currentRoom);
+	public Attack(Game game,GameCharacter target) {
+		super(game);
 		// TODO Auto-generated constructor stub
 		this.target = target;
 	}
@@ -23,7 +24,7 @@ public class Attack extends Action {
 	@Override
 	public boolean isPossible() {
 		// TODO Auto-generated method stub
-		if(!currentRoom.getlMonsters().isEmpty())
+		if(!game.getCurrentRoom().getlMonsters().isEmpty())
 			return true;
 		return true;
 	}
