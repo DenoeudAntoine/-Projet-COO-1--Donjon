@@ -7,12 +7,19 @@ import game.Game;
 import game.Room;
 
 public class Attack extends Action {
-		
+	/**
+	 * Attack constructor
+	 * @param game - Currently game
+	 */	
 	public Attack(Game game) {
 		super(game);
-		// TODO Auto-generated constructor stub
 	}
-
+	
+	
+	/**
+	 * This method permit to attack a monster
+	 * @param p - Player
+	 */
 	@Override
 	public void execute(Player p) {
 		Monster target = p.chose(game.getCurrentRoom().getlMonsters());
@@ -24,10 +31,13 @@ public class Attack extends Action {
 			game.getCurrentRoom().removeMonster(target);
 		}
 	}
-
+	
+	
+	/**
+	 * Return true if there is at least 1 monster / false otherwise
+	 */
 	@Override
 	public boolean isPossible() {
-		// TODO Auto-generated method stub
 		if(!game.getCurrentRoom().getlMonsters().isEmpty())
 			return true;
 		return false;
@@ -35,7 +45,6 @@ public class Attack extends Action {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Action attack";
 	}
 
