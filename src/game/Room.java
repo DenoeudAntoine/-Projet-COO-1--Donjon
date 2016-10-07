@@ -106,10 +106,10 @@ public class Room {
 	/**
 	 * This method permit to add a neighboor to a room
 	 * @param d - The neighbor's direction
-	 * @param m - The adjoining room
+	 * @param r - The adjoining room
 	 */
-	public void addNeighboors(Direction d, Room m) {
-		neighboors.put(d,m);
+	public void addNeighboors(Direction d, Room r) {
+		neighboors.put(d,r);
 	}
 	
 	
@@ -129,42 +129,55 @@ public class Room {
 	public boolean isExit() {
 		return false;
 	}
-
+	
+	
+	/**
+	 * This method permit to get a list of possible direction
+	 * @return direction's list
+	 */
 	public List<Direction> verifDirection() {
 		List<Direction> lDirection = new ArrayList<Direction>();
 				
 		for(Direction d : neighboors.keySet())
 			lDirection.add(d);
 		return lDirection;
-
 	}
 	
 	
+	/**
+	 * This method permit to add all neighbors to a room
+	 * @param nextRoom - The next room
+	 * @param i - Index of the line
+	 * @param j - Index of the column
+	 * @param tmpList - A temporay list of Room, permit to add North and South neighbors of the current room
+	 * @param taille - Size of dungeon
+	 * @return tmpList
+	 */
 	public <T extends Room> List<Room> addAllNeighboors(T nextRoom, int i, int j, List<Room> tmpList, int taille) {
+		//No neighbor to the East for the last column
 		if(i != taille - 1) {
-			//Ajout voisin Est
+			//Add East neighbor
 			this.addNeighboors(Direction.Est, nextRoom);
 		
-			//Ajout voisin Ouest
+			//Add West neighbor
 			nextRoom.addNeighboors(Direction.Ouest, this);
 		}
 		
-		
+		//No neighbor to the North for the first line
 		if(j != 0) {
-			//Ajout voisin nord grâce à la liste
+			//Add North neighbor thank to tmpList
 			this.addNeighboors(Direction.Nord, tmpList.get(i));
 			
-			//Ajout voisin sud pour la salle du dessus
+			//Add South neighbor thank to tmpList
 			tmpList.get(i).addNeighboors(Direction.Sud, this);
 			
-			//Ajout de la salle dans la liste au bon indice
+			//Added the room in the list at the right index
 			tmpList.set(i, this);
 		}
 		else {
-			//Ajout de la salle dans la liste
+			//Added the room in the list
 			tmpList.add(this);
 		}
-				
 		
 		return tmpList;
 	}
