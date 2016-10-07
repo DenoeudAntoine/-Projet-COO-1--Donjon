@@ -53,6 +53,7 @@ public class Game {
 	/**
 	 * @param p - Player
 	 * This method permit to sets the list of possible actions for the player
+	 * With act() method, the player choose a action and executes it
 	 */
 	public void play(Player p) {
 		Attack attack = new Attack(this);
@@ -74,23 +75,39 @@ public class Game {
 		p.act();
 	}
 	
+	
+	/**
+	 * This method permit to determinate if the player has more life points
+	 * or if the player win the game
+	 * @return true if the game is finished / false otherwise
+	 */
 	public boolean isFinished() {
 		if(currentRoom.isExit() && currentRoom.getlMonsters().isEmpty()) {
 			System.out.println("Tu as atteint une sortie !\nFin du jeu :)");
 			return true;
 		}
 		if(player.getHP() <= 0){
-			System.out.println("plus de pdv fdp");
+			System.out.println("Plus de points de vie !");
 			return true;
 		}
 			
 		return false;
 	}
 	
+	
+	/**
+	 * This method permit to changing current room
+	 * @param d - Chosen direction
+	 */
 	public void playerMoveTo(Direction d) {
 		this.currentRoom = currentRoom.getNeighboors(d);
 	}
 	
+	
+	/**
+	*
+	*
+	*/
 	public void addItems(Room room) {
 		Random r = new Random();
 		int i = r.nextInt(3);
