@@ -11,29 +11,49 @@ import character.Monster;
 import character.Player;
 
 public class Game {
-	
+	/**
+	 * currentRoom attribute corresponding to the room where the player is
+	 */
 	private Room currentRoom;
+	
+	/**
+	 * player attribute corresponding to the player
+	 */
 	private Player player;
 	
-	
-	public Game() {
-		// TODO Auto-generated constructor stub
-	}
-	
+	/**
+	 * Game constructor
+	 * @param player - The player
+	 */
 	public Game(Player player){
 		this.createMap();
 		this.player = player;
 	
 	}
 	
+	
+	/**
+	 * current Room getter
+	 * @return The current room
+	 */
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
 	
+	
+	/**
+	 * player getter
+	 * @return The player
+	 */
 	public Player getPlayer() {
 		return player;
 	}
 	
+	
+	/**
+	 * @param p - Player
+	 * This method permit to sets the list of possible actions for the player
+	 */
 	public void play(Player p) {
 		Attack attack = new Attack(this);
 		if(attack.isPossible())
@@ -52,7 +72,6 @@ public class Game {
 			p.addAction(use);
 		
 		p.act();
-		
 	}
 	
 	public boolean isFinished() {
