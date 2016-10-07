@@ -105,8 +105,8 @@ public class Game {
 	
 	
 	/**
-	*
-	*
+	* This method permit to randomly add objects in the room
+	* @param room - Corresponding to the room you must add objects
 	*/
 	public void addItems(Room room) {
 		Random r = new Random();
@@ -126,12 +126,14 @@ public class Game {
 				room.addItem(new OneHarmedBandit());
 				break;
 			}
-		}
-		
-		
-		
+		}	
 	}
 	
+	
+	/**
+	* This method permit to randomly add monsters in the room
+	* @param room - Corresponding to the room you must add monsters
+	*/
 	public void addMonsters(Room room) {
 		Random r = new Random();
 		int i = r.nextInt(4);
@@ -148,16 +150,23 @@ public class Game {
 			room.addMonster(new Monster(r.nextInt(2)+5, r.nextInt(2)+1, 6) );
 			room.addMonster(new Monster(r.nextInt(2)+5, r.nextInt(2)+1, 6) );
 			break;
-		}
-		
+		}		
 	}
 	
+	
+	/**
+	 * This method permit to create the game
+	 */
 	public void createMap() {
 		List <Room> tmpList = new ArrayList<Room>();
 		
+		//Temporary room where neighbors are added
 		Room tmpRoom;
 		
-		int taille = 5, i = 0;
+		//Game's size
+		int taille = 5;
+		
+		int i = 0;
 		int indice = 1;
 		int probaSortie;
 		int nbSortie = 0;
