@@ -6,66 +6,130 @@ import java.util.*;
 import character.*;
 
 public class Room {
-	
+	/**
+	 * lMonsters attribute corresponding to all monsters of this room
+	 */
 	protected List<Monster> lMonsters = new ArrayList<Monster>();
+	
+	/**
+	 * lItems attribute corresponding to all items of this room
+	 */
 	protected List<Item> lItems = new ArrayList<Item>();
+	
+	/**
+	 * neighboors attribute corresponding to all neighboors of this room
+	 */
 	protected Map<Direction,Room> neighboors = new HashMap<Direction,Room>();
+	
+	/**
+	 * description attribute corresponding to the description of this room
+	 */
 	private String description;
-		
+	
+	/**
+	 * Room constructor
+	 * @param description - Room's description
+	 */
 	public Room(String description) {
 		this.description = description;
 	}
 	
-	public Room() {
-		// TODO Auto-generated constructor stub
-	}
 	
+	/**
+	 * lMonsters getter
+	 * @return monster's list
+	 */
 	public List<Monster> getlMonsters() {
 		return lMonsters;
 	}
-
+	
+	
+	/**
+	 * lItems getter
+	 * @return item's list
+	 */
 	public List<Item> getlItems() {
 		return lItems;
 	}
-
+	
+	
+	/**
+	 * This method permit to add a monster in lMonsters
+	 * @param m - The monster to add
+	 * @return true if insertion was successful / false otherwise
+	 */
 	public boolean addMonster(Monster m) {
 		return lMonsters.add(m);
 	}
 	
+	
+	/**
+	 * This method permit to remove a monster in lMonsters
+	 * @param m - The monster to remove
+	 * @return true if remove was successful / false otherwise
+	 */
 	public boolean removeMonster(Monster m) {
 		return lMonsters.remove(m);
 	}
 	
+	
+	/**
+	 * This method permit to add a item in lItems
+	 * @param i - The item to add
+	 * @return true if insertion was successful / false otherwise
+	 */
 	public boolean addItem(Item i) {
 		return lItems.add(i);
 	}
 	
+	
+	/**
+	 * This method permit to remove a item in lItems
+	 * @param i - The object to remove
+	 * @return true if remove was successful / false otherwise
+	 */
 	public boolean removeItem(Item i) {
 		return lItems.remove(i);
 	}
 	
 	
+	/**
+	 * This method retrieves a room depending on the direction parameter
+	 * @param d - The direction
+	 * @return the corresponding room
+	 */
 	public Room getNeighboors(Direction d) {
 		return neighboors.get(d);
 	}
 	
+	
+	/**
+	 * This method permit to add a neighboor to a room
+	 * @param d - The neighbor's direction
+	 * @param m - The adjoining room
+	 */
 	public void addNeighboors(Direction d, Room m) {
 		neighboors.put(d,m);
 	}
 	
+	
+	/**
+	 * description getter
+	 * @return Room's description
+	 */
 	public String getDescription() {
 		return this.description;
-}
-
+	}
+	
+	
+	/**
+	 * This method permit to make difference with ExitRoom
+	 * @return false 
+	 */
 	public boolean isExit() {
 		return false;
 	}
 
-	/**
-	 * Verifie si la direction est libre
-	 * @param d
-	 * @return true si la direction est libre / false sinon
-	 */
 	public List<Direction> verifDirection() {
 		List<Direction> lDirection = new ArrayList<Direction>();
 				
