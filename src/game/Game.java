@@ -26,7 +26,6 @@ public class Game {
 	 * @param player - The player
 	 */
 	public Game(Player player){
-		this.createMap();
 		this.player = player;
 	
 	}
@@ -40,6 +39,13 @@ public class Game {
 		return currentRoom;
 	}
 	
+	/**
+	 * currentRoom setter
+	 * @param room The new cuurent room
+	 */
+	public void setCurrentRoom(Room room) {
+		currentRoom = room;
+	}
 	
 	/**
 	 * player getter

@@ -12,6 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		Player player = new Player(20, 4, 0);
 		Game game = new Game(player);
+		game.createMap();
 		int i = 0;
         while(!game.isFinished()) {
 			System.out.println("\n#############################");
