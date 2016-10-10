@@ -8,13 +8,19 @@ import action.Action;
 import action.Look;
 
 public class testLook extends testAction {
-
+	
+	/**
+	 * @see test.testAction
+	 */
 	@Override
 	public Action initAction() {
 		// TODO Auto-generated method stub
 		return new Look(g);
 	}
-
+	
+	/**
+	 * @see test.testAction
+	 */
 	@Override
 	@Test
 	public void testIsPossible() {

@@ -2,12 +2,15 @@ package test;
 
 import static org.junit.Assert.*;
 
-import org.junit.*;
+import org.junit.Test;
 
-import action.*;
-import character.Monster;
-public class testAttack extends testAction {
-	
+import action.Action;
+import action.Use;
+import character.Player;
+import item.HealthPotion;
+import item.Item;
+
+public class testUse extends testAction {
 	
 	/**
 	 * @see test.testAction
@@ -15,22 +18,21 @@ public class testAttack extends testAction {
 	@Override
 	public Action initAction() {
 		// TODO Auto-generated method stub
-		return new Attack(g);
+		return new Use(g);
 	}
-	
 	
 	/**
 	 * @see test.testAction
 	 */
+	@Override
 	@Test
 	public void testIsPossible() {
 		// TODO Auto-generated method stub
-		
 		assertFalse(a.isPossible());
-		g.getCurrentRoom().addMonster(new Monster(10,10,10));
+		
+		r.addItem(new HealthPotion());
 		
 		assertTrue(a.isPossible());
 	}
-
 
 }
