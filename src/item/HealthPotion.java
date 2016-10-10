@@ -5,23 +5,31 @@ import java.util.Random;
 import character.Player;
 
 public class HealthPotion implements Item {
-	
+	/**
+	 * heal attribute corresponding to the number of points of life to caring
+	 */
 	protected int heal;
 	
+	/**
+	 * HealthPotion constructor
+	 */
 	public HealthPotion() {
-		// TODO Auto-generated constructor stub
 		Random r = new Random();
 		heal = r.nextInt(10) + 5;
 	}
-
+	
+	
+	/**
+	 * This method permit to heal a player
+	 * @param p - Player
+	 */
 	public void effect(Player p) {
-		// TODO Auto-generated method stub
-		System.out.println(heal + " hp vont �tre ajout� !");
+		System.out.println(heal + " hp vont etre ajoute !");
 		p.heal(heal);
 	}
+	
 	
 	public String toString() {
 		return "Potion de " + heal + " points de vie";
 	}
-
 }
