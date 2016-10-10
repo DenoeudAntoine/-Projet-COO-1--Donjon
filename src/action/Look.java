@@ -18,6 +18,7 @@ public class Look extends Action {
 	
 	/**
 	 * This method permit to have informations about the room
+	 * @param p - Player
 	 */
 	@Override
 	public void execute(Player p) {
@@ -53,7 +54,6 @@ public class Look extends Action {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Regarder dans la salle";
 	}
 }
