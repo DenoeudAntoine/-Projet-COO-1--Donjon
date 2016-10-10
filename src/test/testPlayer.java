@@ -9,7 +9,11 @@ import character.Monster;
 import character.Player;
 
 public class testPlayer extends testGameCharacter {
-
+	
+	
+	/**
+	 * @see test.testGameCharacter
+	 */
 	@Override
 	protected GameCharacter initGC() {
 		// TODO Auto-generated method stub
