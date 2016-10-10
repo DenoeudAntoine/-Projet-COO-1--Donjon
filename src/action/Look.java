@@ -7,15 +7,20 @@ import game.Game;
 import game.Room;
 
 public class Look extends Action {
-	
+	/**
+	 * Look constructor
+	 * @param game - Currently game
+	 */
 	public Look(Game game) {
-		// TODO Auto-generated constructor stub
 		super(game);
 	}
-
+	
+	
+	/**
+	 * This method permit to have informations about the room
+	 */
 	@Override
 	public void execute(Player p) {
-		// TODO Auto-generated method stub
 		if(game.getCurrentRoom().getlMonsters().isEmpty())
 			System.out.println("Aucun monstre dans cette salle");
 		else 
@@ -28,17 +33,18 @@ public class Look extends Action {
 		
 		for(Direction d : Direction.getAllDirection()) {
 			if(game.getCurrentRoom().getNeighboors(d) != null) {
-				System.out.println("Une salle est pr�sente " + d.toString(d));
+				System.out.println("Une salle est presente " + d.toString(d));
 			}
-		}
-			
-	
-			
+		}		
 	}
-
+	
+	
+	/**
+	 * This method permit to check if the action look is possible
+	 * @return true if is possible / false otherwise
+	 */
 	@Override
 	public boolean isPossible() {
-		// TODO Auto-generated method stub
 		if(game.getCurrentRoom() != null) 
 			return true;
 		
@@ -50,5 +56,4 @@ public class Look extends Action {
 		// TODO Auto-generated method stub
 		return "Regarder dans la salle";
 	}
-
 }

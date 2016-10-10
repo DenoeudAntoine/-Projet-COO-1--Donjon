@@ -35,7 +35,7 @@ public class Attack extends Action {
 	
 	/**
 	 * This method permit to check if one attack is possible
-	 * @returneturn true if there is at least 1 monster / false otherwise
+	 * @return true if there is at least 1 monster / false otherwise
 	 */
 	@Override
 	public boolean isPossible() {
