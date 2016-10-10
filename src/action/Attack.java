@@ -28,6 +28,7 @@ public class Attack extends Action {
 		
 		if(target.getHP() <= 0){
 			System.out.println("Le monstre a été tué");
+			p.addGolds(target.getCoins());
 			game.getCurrentRoom().removeMonster(target);
 		}
 	}

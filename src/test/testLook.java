@@ -4,25 +4,26 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-import action.*;
-import character.Monster;
-public class testAttack extends testAction {
+import action.Action;
+import action.Look;
+
+public class testLook extends testAction {
 
 	@Override
 	public Action initAction() {
 		// TODO Auto-generated method stub
-		return new Attack(g);
+		return new Look(g);
 	}
 
+	@Override
 	@Test
 	public void testIsPossible() {
 		// TODO Auto-generated method stub
+		assertTrue(a.isPossible());
+		g.setCurrentRoom(null);
 		
 		assertFalse(a.isPossible());
-		g.getCurrentRoom().addMonster(new Monster(10,10,10));
 		
-		assertTrue(a.isPossible());
 	}
-
 
 }
