@@ -108,7 +108,7 @@ public class Room {
 	 * @param d - The neighbor's direction
 	 * @param r - The adjoining room
 	 */
-	public void addNeighboors(Direction d, Room r) {
+	public void addNeighbors(Direction d, Room r) {
 		neighboors.put(d,r);
 	}
 	
@@ -157,19 +157,19 @@ public class Room {
 		//No neighbor to the East for the last column
 		if(i != taille - 1) {
 			//Add East neighbor
-			this.addNeighboors(Direction.Est, nextRoom);
+			this.addNeighbors(Direction.Est, nextRoom);
 		
 			//Add West neighbor
-			nextRoom.addNeighboors(Direction.Ouest, this);
+			nextRoom.addNeighbors(Direction.Ouest, this);
 		}
 		
 		//No neighbor to the North for the first line
 		if(j != 0) {
 			//Add North neighbor thank to tmpList
-			this.addNeighboors(Direction.Nord, tmpList.get(i));
+			this.addNeighbors(Direction.Nord, tmpList.get(i));
 			
 			//Add South neighbor thank to tmpList
-			tmpList.get(i).addNeighboors(Direction.Sud, this);
+			tmpList.get(i).addNeighbors(Direction.Sud, this);
 			
 			//Added the room in the list at the right index
 			tmpList.set(i, this);

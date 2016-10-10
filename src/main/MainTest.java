@@ -30,20 +30,20 @@ public class MainTest {
 								
 				//Ajout voisin Est
 				if(i != taille - 1) {
-					tmpRoom.addNeighboors(Direction.Est, nextRoom);
+					tmpRoom.addNeighbors(Direction.Est, nextRoom);
 				}
 				
 				//Ajout voisin Ouest
 				if(i != taille - 1)
-					nextRoom.addNeighboors(Direction.Ouest, tmpRoom);
+					nextRoom.addNeighbors(Direction.Ouest, tmpRoom);
 				
 				//Ajout voisin nord grâce à la liste
 				if(j != 0)
-					tmpRoom.addNeighboors(Direction.Nord, tmpList.get(i));
+					tmpRoom.addNeighbors(Direction.Nord, tmpList.get(i));
 				
 				//Récupération de la salle dans la liste pour ajouter la salle en cours en voisin
 				if(j != 0)
-					tmpList.get(i).addNeighboors(Direction.Sud, tmpRoom);
+					tmpList.get(i).addNeighbors(Direction.Sud, tmpRoom);
 				
 				//Ajout de la salle en cours dans la liste, au bon indice
 				if(j == 0)
